@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+        <link href="{% static "administrator/css/nav.css" %}" rel="stylesheet">
+</head>
+<html lang="en">
+
+<header class="header" id="header">
+        <nav class="nav container">
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="{% url 'administrator:landing' %}" class="nav__link ">
+                                <i class='bx bx-home-alt nav__icon'></i>
+                                <span class="nav__name">Home</span>
+                            </a>
+                        </li>
+                        {% if request.user.exists %}
+
+                            <li class="nav__item">
+                                <a href="{% url 'accounts:login' %}" class="nav__link">
+                                    <i class='bx bx-book-alt nav__icon'></i>
+                                    <span class="nav__name">ورود</span>
+                                </a>
+                            </li>
+
+                        {% else %}
+                            <li class="nav__item">
+                                <a href="{% url 'accounts:profile_view' %}" class="nav__link">
+                                    <i class='bx bx-book-alt nav__icon'></i>
+                                    <span class="nav__name">پروفایل</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if request.user.role == "COSTUMER" %}
+
+                            <li class="nav__item">
+                                <a href="{% url 'cart:cart_view' %}" class="nav__link ">
+                                    <i class='bx bx-home-alt nav__icon'></i>
+                                    <span class="nav__name">سبد خرید</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+
+
+            </nav>
+    </header>
+
+</html>
