@@ -13,7 +13,7 @@
                         <li class="nav__item">
                             <a href="{% url 'administrator:landing' %}" class="nav__link ">
                                 <i class='bx bx-home-alt nav__icon'></i>
-                                <span class="nav__name">Home</span>
+                                <span class="nav__name">خانه</span>
                             </a>
                         </li>
                         {% if request.user.exists %}
@@ -39,6 +39,15 @@
                                 <a href="{% url 'cart:cart_view' %}" class="nav__link ">
                                     <i class='bx bx-home-alt nav__icon'></i>
                                     <span class="nav__name">سبد خرید</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if request.user.is_authenticated  %}
+
+                            <li class="nav__item">
+                                <a href="{% url 'accounts:logout' %}" class="nav__link ">
+                                    <i class='bx bx-home-alt nav__icon'></i>
+                                    <span class="nav__name">خروج</span>
                                 </a>
                             </li>
                         {% endif %}
