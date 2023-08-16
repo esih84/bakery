@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BakeryType, SellerProfile,CostumerProfile
+from .models import *
 # Register your models here.
 admin.site.register(BakeryType)
 admin.site.register(SellerProfile)

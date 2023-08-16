@@ -1,5 +1,5 @@
 from django import forms
-from .models import User, CostumerProfile, SellerProfile
+from .models import *
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 
@@ -43,3 +43,13 @@ class UserUpdateForm(forms.ModelForm):
         model=User
         fields = ['phone', 'username']
 
+class LoginPhoneForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['phone']
+
+
+class CodePhoneForm(forms.ModelForm):
+    class Meta:
+        model = CostumerProfile
+        fields = ['verify_phone']

@@ -12,5 +12,7 @@ urlpatterns = [
     path('edit_profile', editProfile, name="edit_profile"),
     path('seller_edit_profile', SellerEditProfile, name="seller_edit_profile"),
     path('profile_view', profile, name="profile_view"),
+    path('login_phone/', login_phone, name="login_phone"),
+    path('verify_login_phone/', verify_login_phone, name="verify_login_phone"),
 
 ]

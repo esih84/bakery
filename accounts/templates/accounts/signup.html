@@ -16,7 +16,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="POST" >
+				<form  class="login100-form validate-form" method="POST" >
                     {% csrf_token %}
 					<span class="login100-form-title p-b-26">
                         ثبت نام
@@ -26,9 +26,10 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="number" name="phone">
+						phone:<input class="input100" type="number" name="phone">
 						<span class="focus-input100" data-placeholder="تلفن"></span>
 					</div>
+
                     <div class="wrap-input100 validate-input" >
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="نام کاربری"></span>
